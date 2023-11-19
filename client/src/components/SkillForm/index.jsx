@@ -2,24 +2,24 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_SKILL } from '../../utils/mutations';
+import { ADD_LOCATION } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-const SkillForm = ({ profileId }) => {
-  const [skill, setSkill] = useState('');
+const LocationForm = ({ profileId }) => {
+  const [location, setLocation] = useState('');
 
-  const [addSkill, { error }] = useMutation(ADD_SKILL);
+  const [addLocation, { error }] = useMutation(ADD_LOCATION);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const data = await addSkill({
-        variables: { profileId, skill },
+      const data = await addLocation({
+        variables: { profileId, location },
       });
 
-      setSkill('');
+      setLocation('');
     } catch (err) {
       console.error(err);
     }
@@ -37,9 +37,9 @@ const SkillForm = ({ profileId }) => {
           <div className="col-12 col-lg-9">
             <input
               placeholder="Endorse some skills..."
-              value={skill}
+              value={location}
               className="form-input w-100"
-              onChange={(event) => setSkill(event.target.value)}
+              onChange={(event) => setLocation(event.target.value)}
             />
           </div>
 
@@ -64,4 +64,4 @@ const SkillForm = ({ profileId }) => {
   );
 };
 
-export default SkillForm;
+export default LocationForm;

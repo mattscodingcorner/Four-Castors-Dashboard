@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import ProfileList from '../components/ProfileList';
 import { QUERY_PROFILES } from '../utils/queries';
 
+import MapComponent from '../components/Map/MapComponent';
+
 const fetchWeatherData = async (location) => {
   try {
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=51f615dbed5fbc27f3137d2ba941cf4a`);
@@ -26,10 +28,6 @@ const WeatherComponent = () => {
 
   const { name, weather, main } = weatherData || {};
 
-  const convertToCelsius = (temp) => {
-    return Math.round(temp - 273.15);
-  };
-
   const convertToFahrenheit = (temp) => {
     return Math.round((temp * 9) / 5 + 32);
   };
@@ -41,7 +39,8 @@ const WeatherComponent = () => {
         <div>
           <h2>{name}</h2>
           <h3>{weather?.[0]?.description}</h3>
-          <h3>{convertToFahrenheit(main.temp)} °F</h3>
+          <h3>{convertToFahrenheit(main.temp)}°F</h3>
+          <MapComponent /> 
         </div>
       )}
     </div>

@@ -27,10 +27,14 @@ const ProfileList = ({ profiles, title }) => {
                   to={`/profiles/${profile._id}`}
                 >
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Your saved locations.
 =======
                   View their locations.
 >>>>>>> 790a13debc8e8cac5c2641998554471ee4b56f20
+=======
+                  Your saved locations.
+>>>>>>> 2e8785c9b3a3ed287e975a9de1a289a843fd5f08
                 </Link>
               </div>
             </div>

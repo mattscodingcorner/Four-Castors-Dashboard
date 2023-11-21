@@ -4,7 +4,7 @@ const typeDefs = `
     name: String
     email: String
     password: String
-    locations: [String]!
+    locations: String
   }
 
   type Auth {

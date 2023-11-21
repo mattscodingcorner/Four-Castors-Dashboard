@@ -1,4 +1,6 @@
 const { Schema, model } = require('mongoose');
+const locationSchema = require('./Location');
+
 const bcrypt = require('bcrypt');
 
 const profileSchema = new Schema({
@@ -19,12 +21,7 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  locations: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
+  locations: [locationSchema],
 });
 
 // set up pre-save middleware to create password

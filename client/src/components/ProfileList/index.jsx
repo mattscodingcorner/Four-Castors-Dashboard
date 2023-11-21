@@ -16,9 +16,9 @@ const ProfileList = ({ profiles, title }) => {
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {profile.name} <br />
                   <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently has {profile.skills ? profile.skills.length : 0}{' '}
-                    endorsed skill
-                    {profile.skills && profile.skills.length === 1 ? '' : 's'}
+                    currently has {profile.locations ? profile.locations.length : 0}{' '}
+                    saved location
+                    {profile.locations && profile.locations.length === 1 ? '' : 's'}
                   </span>
                 </h4>
 
@@ -26,7 +26,11 @@ const ProfileList = ({ profiles, title }) => {
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/profiles/${profile._id}`}
                 >
+<<<<<<< HEAD
                   Your saved locations.
+=======
+                  View their locations.
+>>>>>>> 790a13debc8e8cac5c2641998554471ee4b56f20
                 </Link>
               </div>
             </div>

@@ -1,44 +1,44 @@
 import { useMutation } from '@apollo/client';
 
-import { REMOVE_SKILL } from '../../utils/mutations';
+import { REMOVE_LOCATION } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
 
-const SkillsList = ({ skills, isLoggedInUser = false }) => {
-  const [removeSkill, { error }] = useMutation
-  (REMOVE_SKILL, {
+const LocationsList = ({ locations, isLoggedInUser = false }) => {
+  const [removeLocation, { error }] = useMutation
+  (REMOVE_LOCATION, {
     refetchQueries: [
       QUERY_ME,
       'me'
     ]
   });
 
-  const handleRemoveSkill = async (skill) => {
+  const handleRemoveLocation = async (skill) => {
     try {
-      const { data } = await removeSkill({
-        variables: { skill },
+      const { data } = await removeLocation({
+        variables: { location },
       });
     } catch (err) {
       console.error(err);
     }
   };
 
-  if (!skills.length) {
-    return <h3>No Skills Yet</h3>;
+  if (!locations.length) {
+    return <h3>No Locations Yet</h3>;
   }
 
   return (
     <div>
       <div className="flex-row justify-space-between my-4">
-        {skills &&
-          skills.map((skill) => (
-            <div key={skill} className="col-12 col-xl-6">
+        {locations &&
+          locations.map((location) => (
+            <div key={location} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
-                  <span>{skill}</span>
+                  <span>{location}</span>
                   {isLoggedInUser && (
                     <button
                       className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveSkill(skill)}
+                      onClick={() => handleRemoveLocation(location)}
                     >
                       X
                     </button>
@@ -55,4 +55,4 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
   );
 };
 
-export default SkillsList;
+export default LocationsList;

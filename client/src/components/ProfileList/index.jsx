@@ -16,9 +16,9 @@ const ProfileList = ({ profiles, title }) => {
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {profile.name} <br />
                   <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently has {profile.skills ? profile.skills.length : 0}{' '}
-                    endorsed skill
-                    {profile.skills && profile.skills.length === 1 ? '' : 's'}
+                    currently has {profile.locations ? profile.locations.length : 0}{' '}
+                    saved location
+                    {profile.locations && profile.locations.length === 1 ? '' : 's'}
                   </span>
                 </h4>
 

@@ -25,16 +25,8 @@ const ProfileList = ({ profiles, title }) => {
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/profiles/${profile._id}`}
-                >
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  Your saved locations.
-=======
-                  View their locations.
->>>>>>> 790a13debc8e8cac5c2641998554471ee4b56f20
-=======
-                  Your saved locations.
->>>>>>> 2e8785c9b3a3ed287e975a9de1a289a843fd5f08
+                > HEAD
+                  View saved locations.
                 </Link>
               </div>
             </div>

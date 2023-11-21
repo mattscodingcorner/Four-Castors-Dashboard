@@ -23,7 +23,7 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
   };
 
   if (!locations.length) {
-    return <h3>No Locations Yet</h3>;
+    return <h3>No Saved Locations Yet</h3>;
   }
 
   return (

@@ -27,7 +27,7 @@ const LocationForm = ({ profileId }) => {
 
   return (
     <div>
-      <h4>Endorse some more skills below.</h4>
+      <h4>Save more Weather locations below</h4>
 
       {Auth.loggedIn() ? (
         <form
@@ -36,7 +36,7 @@ const LocationForm = ({ profileId }) => {
         >
           <div className="col-12 col-lg-9">
             <input
-              placeholder="Endorse some skills..."
+              placeholder="Save this location..."
               value={location}
               className="form-input w-100"
               onChange={(event) => setLocation(event.target.value)}
@@ -45,7 +45,7 @@ const LocationForm = ({ profileId }) => {
 
           <div className="col-12 col-lg-3">
             <button className="btn btn-info btn-block py-3" type="submit">
-              Endorse Skill
+              Save Location
             </button>
           </div>
           {error && (
@@ -56,7 +56,7 @@ const LocationForm = ({ profileId }) => {
         </form>
       ) : (
         <p>
-          You need to be logged in to endorse skills. Please{' '}
+          You'll need to be logged in to see what the weather is up to {' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

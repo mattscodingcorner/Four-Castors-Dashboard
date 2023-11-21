@@ -28,7 +28,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div> The sun is warming up...</div>;
   }
 
   if (!profile?.name) {

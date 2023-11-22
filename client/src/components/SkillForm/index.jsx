@@ -56,7 +56,7 @@ const LocationForm = ({ profileId }) => {
         </form>
       ) : (
         <p>
-          You'll need to be logged in to see what the weather is up to {' '}
+          You&apos;ll need to be logged in to see what the weather is up to {' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

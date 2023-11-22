@@ -23,7 +23,7 @@ const typeDefs = `
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addLocation(profileId: ID!, location: String!): Profile
+    addLocation(profileId: ID!, location: [String]!): Profile
     removeProfile: Profile
     removeLocation(location: String!): Profile
   }

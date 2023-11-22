@@ -924,7 +924,7 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #1bbc9b !important;
+  background-image: radial-gradient(rgb(43, 214, 248), rgb(0, 149, 255), rgb(0, 79, 128))  !important;
 }
 
 .bg-danger {

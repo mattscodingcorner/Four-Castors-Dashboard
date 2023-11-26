@@ -36,7 +36,7 @@ const WeatherComponent = () => {
 
   return (
     <div>
-      <button onClick={promptForLocation}>Get Weather</button>
+      <button className="btn btn-lg btn-primary m-2" onClick={promptForLocation}>Get Weather</button>
       {weatherData && (
         <div>
           <h2>{name}</h2>

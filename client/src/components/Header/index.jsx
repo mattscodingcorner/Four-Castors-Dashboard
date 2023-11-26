@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
+// import 
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -18,6 +20,11 @@ const Header = () => {
         <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
           Weather you waiting for? Hurrican and login/signup.😉
         </p>
+
+        {/* <div>
+      <button className="btn btn-lg btn-primary m-2" onClick={promptForLocation}>Get Weather</button>
+    </div> */}
+
         <div>
           {Auth.loggedIn() ? (
             <>

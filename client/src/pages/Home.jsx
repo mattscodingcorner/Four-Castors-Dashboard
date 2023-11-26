@@ -61,7 +61,7 @@ const Home = () => {
           ) : (
             <>
               <WeatherComponent />
-              <ProfileList profiles={profiles} />
+              {/* <ProfileList profiles={profiles} /> */}
             </>
           )}
         </div>

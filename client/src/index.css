@@ -924,7 +924,7 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #1bbc9b !important;
+  background-image: radial-gradient(rgb(43, 214, 248), rgb(0, 149, 255), rgb(0, 79, 128))  !important;
 }
 
 .bg-danger {
@@ -1329,6 +1329,12 @@ label form [type='radio'] {
 .col-12 {
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+/* custom made classes */
+.weatherComponent{
+  display: flex;
+  justify-content: center;
 }
 
 /* col-sm */

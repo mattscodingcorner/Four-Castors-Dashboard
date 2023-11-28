@@ -43,7 +43,7 @@ const Profile = () => {
   return (
     <div>
       <h2 className="card-header">
-        {profileId ? `${profile.name}'s` : 'Your'} friends have saved these locations...
+        {profileId ? `${profile.name}'s` : 'Your'} saved locations...
       </h2>
 
       {profile.locations?.length > 0 && (

@@ -13,8 +13,8 @@ export const ADD_PROFILE = gql`
 `;
 
 export const ADD_LOCATION = gql`
-  mutation addLocation($profileId: ID!, $location: String!) {
-    addLocation(profileId: $profileId, location: $locaiton) {
+  mutation addLocation($profileId: ID!, $location: [String]!) {
+    addLocation(profileId: $profileId, location: $location) {
       _id
       name
       locations

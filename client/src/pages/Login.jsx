@@ -48,7 +48,7 @@ const Login = (props) => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now login{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (

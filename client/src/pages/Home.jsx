@@ -56,11 +56,11 @@ const Home = () => {
       <div className="flex-row justify-center">
         <div className="col-12 col-md-10 my-3">
           {loading ? (
-            <div>Loading...</div>
+            <div>The sun is warming up...</div>
           ) : (
             <>
               <WeatherComponent />
-              <ProfileList profiles={profiles} />
+              {/* <ProfileList profiles={profiles} /> */}
             </>
           )}
         </div>

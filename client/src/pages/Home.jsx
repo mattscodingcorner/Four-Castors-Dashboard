@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import ProfileList from '../components/ProfileList';
 import { QUERY_PROFILES } from '../utils/queries';
+// import ScrollableDropdown from '../components/Drop down menu';
 
 import MapComponent from '../components/Map/MapComponent';
 
@@ -33,8 +34,8 @@ const WeatherComponent = () => {
   };
 
   return (
-    <div>
-      <button onClick={promptForLocation}>Get Weather</button>
+    <div className="weatherComponent" >
+      <button className="btn btn-lg btn-primary m-2" onClick={promptForLocation}>Get Your Weather Dashboard</button>
       {weatherData && (
         <div>
           <h2>{name}</h2>

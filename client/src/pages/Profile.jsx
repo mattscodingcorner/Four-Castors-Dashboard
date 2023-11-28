@@ -1,8 +1,8 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import LocationsList from '../components/SkillsList';
-import LocationForm from '../components/SkillForm';
+import LocationsList from '../components/LocationList';
+import LocationForm from '../components/LocationForm';
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 

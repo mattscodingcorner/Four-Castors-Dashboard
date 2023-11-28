@@ -1,7 +1,6 @@
 import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 
-import ProfileList from '../components/ProfileList';
 import { QUERY_PROFILES } from '../utils/queries';
 // import ScrollableDropdown from '../components/Drop down menu';
 
@@ -41,7 +40,6 @@ const WeatherComponent = () => {
           <h2>{name}</h2>
           <h3>{weather?.[0]?.description}</h3>
           <h3>{convertToFahrenheit(main.temp)}°F</h3>
-          <MapComponent /> 
         </div>
       )}
     </div>
@@ -61,7 +59,7 @@ const Home = () => {
           ) : (
             <>
               <WeatherComponent />
-              {/* <ProfileList profiles={profiles} /> */}
+              <MapComponent /> 
             </>
           )}
         </div>

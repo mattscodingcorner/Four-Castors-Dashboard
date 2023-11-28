@@ -12,7 +12,7 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
     ]
   });
 
-  const handleRemoveLocation = async (skill) => {
+  const handleRemoveLocation = async (location) => {
     try {
       const { data } = await removeLocation({
         variables: { location },

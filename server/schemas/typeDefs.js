@@ -25,8 +25,12 @@ const typeDefs = `
 
     addLocation(profileId: ID!, location: [String]!): Profile
     removeProfile: Profile
-    removeLocation(profileId: ID! locations: [String]!): Profile
+    removeLocation(location: String!): Profile
   }
 `;
 
 module.exports = typeDefs;
+
+
+
+// removeLocation(profileId: ID! locations: [String]!): Profile

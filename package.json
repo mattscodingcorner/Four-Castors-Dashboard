@@ -17,5 +17,6 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@maptiler/sdk": "^1.2.0"
   }
 }

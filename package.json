@@ -17,7 +17,9 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
     "@maptiler/sdk": "^1.2.0",
-    "@maptiler/weather": "^1.1.2"
+    "@maptiler/weather": "^1.1.2",
+    "react-google-autocomplete": "^2.7.3"
   }
 }

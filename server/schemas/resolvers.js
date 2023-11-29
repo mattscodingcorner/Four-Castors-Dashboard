@@ -69,16 +69,12 @@ const resolvers = {
       throw AuthenticationError;
     },
     // Make it so a logged in user can only remove a skill from their own profile
-    removeLocation: async (parent, { profileId, locations }, context) => {
+    removeLocation: async (parent, { location }, context) => {
       // If the user is authenticated, remove the locations from the profile
       if (context.user) {
-        const profile = await Profile.findById(profileId);
-        if (!profile) {
-          throw new Error('No profile found with this id!');
-        }
         return Profile.findOneAndUpdate(
-          { _id: profileId },
-          { $pullAll: { locations: locations } },
+          { _id: context.user._id },
+          { $pull: { locations: location } },
           { new: true }
         );
       }
@@ -90,3 +86,27 @@ const resolvers = {
 };
 
 module.exports = resolvers;
+
+
+
+
+
+
+// removeLocation: async (parent, { profileId, locations }, context) => {
+//   // If the user is authenticated, remove the locations from the profile
+//   if (context.user) {
+//     const profile = await Profile.findById(profileId);
+//     if (!profile) {
+//       throw new Error('No profile found with this id!');
+//     }
+//     return Profile.findOneAndUpdate(
+//       { _id: profileId },
+//       { $pullAll: { locations: locations } },
+//       { new: true }
+//     );
+//   }
+
+//   // If the user is not authenticated, throw an error
+//   throw AuthenticationError;
+// },
+// },

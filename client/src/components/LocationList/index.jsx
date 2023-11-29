@@ -1,7 +1,9 @@
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 import { REMOVE_LOCATION } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
+
 
 const LocationsList = ({ locations, isLoggedInUser = false }) => {
   const [removeLocation, { error }] = useMutation
@@ -12,7 +14,7 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
     ]
   });
 
-  const handleRemoveLocation = async (skill) => {
+  const handleRemoveLocation = async (location) => {
     try {
       const { data } = await removeLocation({
         variables: { location },
@@ -56,3 +58,6 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
 };
 
 export default LocationsList;
+
+
+// the spans that contain the location names are clickable links that will take the user to the /weather/:location route, where :location is the name of the location. This route will display the weather data for the location.

@@ -14,34 +14,43 @@ const fetchWeatherData = async (location) => {
 
 const WeatherComponent = () => {
   const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState(null);
 
   const promptForLocation = async () => {
     const location = prompt('Please enter your location:');
-    const data = await fetchWeatherData(location);
-    setWeatherData(data);
+    if (location) {
+      const data = await fetchWeatherData(location);
+      if (data) {
+        setWeatherData(data);
+        setError(null);
+      } else {
+        setError('Error fetching weather data');
+      }
+    } else {
+      setError('Please enter a location');
+    }
   };
 
   const { name, weather, main } = weatherData || {};
-
-  // const convertToCelsius = (temp) => {
-  //   return Math.round(temp - 273.15);
-  // };
 
   const convertToFahrenheit = (temp) => {
     return Math.round((temp * 9) / 5 + 32);
   };
 
   return (
-    <div className="weatherComponent" >
-    <button className="btn btn-lg btn-primary m-2" onClick={promptForLocation}>Get Your Weather Dashboard</button>
-    {weatherData && (
-      <div>
-        <h2>{name}</h2>
-        <h3>{weather?.[0]?.description}</h3>
-        <h3>{convertToFahrenheit(main.temp)}°F</h3>
-      </div>
-    )}
-  </div>
+    <div className="weatherComponent">
+      <button className="btn btn-lg btn-primary m-2" onClick={promptForLocation}>
+        Get Your Weather Dashboard
+      </button>
+      {error && <p>{error}</p>}
+      {weatherData && (
+        <div>
+          <h2>{name}</h2>
+          <h3>{weather?.[0]?.description}</h3>
+          <h3>{convertToFahrenheit(main.temp)}°F</h3>
+        </div>
+      )}
+    </div>
   );
 };
 

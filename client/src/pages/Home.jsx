@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import WeatherComponent from '../components/Weather';
+import WeatherHome from '../components/WeatherHome';
 import { QUERY_PROFILES } from '../utils/queries';
 
 import MapComponent from '../components/Map';
@@ -16,9 +16,7 @@ const Home = () => {
             <div>The sun is warming up...</div>
           ) : (
             <>
-              <WeatherComponent />
-              {/* <WeatherForecast /> */}
-              {/* <ProfileList profiles={profiles} /> */}
+              <WeatherHome />
               <MapComponent /> 
             </>
           )}

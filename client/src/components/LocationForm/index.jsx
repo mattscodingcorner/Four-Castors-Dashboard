@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import ReactGoogleAutocomplete from 'react-google-autocomplete';
-import { API_KEY } from '../../../dist/assets/config';
+import.meta.env.VITE_APP_API_KEY
 
 import { ADD_LOCATION } from '../../utils/mutations';
 
@@ -50,7 +50,7 @@ const LocationForm = ({ profileId }) => {
               value={location}
               className="form-input w-100"
               onChange={(event) => setLocation(event.target.value)}
-              apiKey={API_KEY}
+              apiKey={import.meta.env.VITE_APP_API_KEY}
             />
           </div>
 

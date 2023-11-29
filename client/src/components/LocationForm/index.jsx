@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
+import ReactGoogleAutocomplete from 'react-google-autocomplete';
+import { API_KEY } from '../../../dist/assets/config';
 
 import { ADD_LOCATION } from '../../utils/mutations';
 
@@ -43,11 +45,12 @@ const LocationForm = ({ profileId }) => {
           onSubmit={handleFormSubmit}
         >
           <div className="col-12 col-lg-9">
-            <input
+          <ReactGoogleAutocomplete
               placeholder="Save this location..."
               value={location}
               className="form-input w-100"
               onChange={(event) => setLocation(event.target.value)}
+              apiKey={API_KEY}
             />
           </div>
 
@@ -78,6 +81,3 @@ const LocationForm = ({ profileId }) => {
 };
 
 export default LocationForm;
-
-
-//TODO: add error handling for no location entered

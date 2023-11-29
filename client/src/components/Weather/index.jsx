@@ -70,23 +70,25 @@ const handleSearch = async (event) => {
 
   return (
     <div className="weatherComponent">
-    <form onSubmit={handleSearch}>
-      <input type="text" value={location} onChange={e => setLocation(e.target.value)} />
-      <button className="btn btn-lg btn-primary m-2" type="submit">
-        Get Your Weather Dashboard
-      </button>
-    </form>
-    {error && <p>{error}</p>}
-    {weatherData && (
+      <form onSubmit={handleSearch}>
+        <input type="text" value={location} onChange={e => setLocation(e.target.value)} />
+        <button className="btn btn-lg btn-primary m-2" type="submit">
+          Get Your Weather Dashboard
+        </button>
+      </form>
+      {error && <p>{error}</p>}
+      {weatherData && (
         <div>
           <h2>{name}</h2>
-          <h3>{weather?.[0]?.description}</h3>
+          <img src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} alt={weather[0].description} />
+          <h3>{weather[0].description}</h3>
           <h3>{convertToFahrenheit(main.temp)}°F</h3>
         </div>
       )}
       {dailyForecast.map((forecast, index) => (
         <div key={index}>
           <h4>{new Date(forecast.dt_txt).toLocaleDateString()}</h4>
+          <img src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`} alt={forecast.weather[0].description} />
           <p>Temperature: {convertToFahrenheit(forecast.main.temp)}°F</p>
           <p>Weather: {forecast.weather[0].description}</p>
         </div>

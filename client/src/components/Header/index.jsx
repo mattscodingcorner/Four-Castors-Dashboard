@@ -19,7 +19,7 @@ const Header = () => {
         </Link>
         <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
 
-          Weather you waiting for? Hurrican and login/signup.🌞
+          Weather you waiting for? Hurricane and login/signup.🌞
 
         </p>
 

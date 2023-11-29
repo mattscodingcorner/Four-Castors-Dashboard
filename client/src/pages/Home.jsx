@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import WeatherComponent from '../components/Weather';
 import { QUERY_PROFILES } from '../utils/queries';
 
-import MapComponent from '../components/Map/MapComponent';
+import MapComponent from '../components/Map';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import WeatherComponent from '../Weather' // Import your WeatherComponent
+import WeatherComponent from '../WeatherProfile' // Import your WeatherComponent
 
 import { REMOVE_LOCATION } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';

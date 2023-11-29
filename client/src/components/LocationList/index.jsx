@@ -1,18 +1,16 @@
+import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import WeatherComponent from '../WeatherProfile' // Import your WeatherComponent
 
 import { REMOVE_LOCATION } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
 
-
 const LocationsList = ({ locations, isLoggedInUser = false }) => {
-  const [removeLocation, { error }] = useMutation
-  (REMOVE_LOCATION, {
-    refetchQueries: [
-      QUERY_ME,
-      'me'
-    ]
+  const [removeLocation, { error }] = useMutation(REMOVE_LOCATION, {
+    refetchQueries: [QUERY_ME, 'me'],
   });
+
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
   const handleRemoveLocation = async (location) => {
     try {
@@ -22,6 +20,10 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const handleLocationClick = (location) => {
+    setSelectedLocation(location);
   };
 
   if (!locations.length) {
@@ -36,7 +38,7 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
             <div key={location} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
-                  <span>{location}</span>
+                  <span onClick={() => handleLocationClick(location)}>{location}</span>
                   {isLoggedInUser && (
                     <button
                       className="btn btn-sm btn-danger ml-auto"
@@ -50,14 +52,12 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
             </div>
           ))}
       </div>
-      {error && (
-        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-      )}
+      {error && <div className="my-3 p-3 bg-danger text-white">{error.message}</div>}
+      {selectedLocation && <WeatherComponent location={selectedLocation} setSelectedLocation={setSelectedLocation} />}
     </div>
   );
 };
 
 export default LocationsList;
-
 
 // the spans that contain the location names are clickable links that will take the user to the /weather/:location route, where :location is the name of the location. This route will display the weather data for the location.

@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 
 import LocationsList from '../components/LocationList';
 import LocationForm from '../components/LocationForm';
+import MapComponent from '../components/Map';
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 
@@ -55,6 +56,7 @@ const Profile = () => {
 
       <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <LocationForm profileId={profile._id} />
+        {/* <MapComponent />  */}
       </div>
     </div>
   );

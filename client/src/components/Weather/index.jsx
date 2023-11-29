@@ -28,37 +28,36 @@ const fetchWeatherForecast = async (location) => {
   }
 };
 
-const WeatherComponent = () => {
+const WeatherComponent = ({ location, setSelectedLocation }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [weatherForecast, setWeatherForecast] = useState(null);
   const [error, setError] = useState(null);
-  const [location, setLocation] = useState('');
-
-const handleSearch = async (event) => {
-    event.preventDefault(); // Prevent the form from refreshing the page
-    if (location) {
-      const data = await fetchWeatherData(location);
-      const forecastData = await fetchWeatherForecast(location);
-      if (data && forecastData) {
-        setWeatherData(data);
-        setWeatherForecast(forecastData);
-        setError(null);
-      } else {
-        setError('Please enter a valid location');
-      }
-    } else {
-      setError('Please enter a location');
-    }
-  };
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
-    if (weatherData) {
-      console.log('Weather Data:', weatherData);
-    }
-    if (weatherForecast) {
-      console.log('Weather Forecast:', weatherForecast);
-    }
-  }, [weatherData, weatherForecast]);
+    const fetchWeather = async () => {
+      if (location) {
+        const data = await fetchWeatherData(location);
+        const forecastData = await fetchWeatherForecast(location);
+        if (data && forecastData) {
+          setWeatherData(data);
+          setWeatherForecast(forecastData);
+          setError(null);
+        } else {
+          setError('Please enter a valid location');
+        }
+      } else {
+        setError('Please enter a location');
+      }
+    };
+
+    fetchWeather();
+  }, [location]);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    setSelectedLocation(inputValue);
+  };
 
   const { name, weather, main } = weatherData || {};
 
@@ -71,7 +70,7 @@ const handleSearch = async (event) => {
   return (
     <div className="weatherComponent">
       <form onSubmit={handleSearch}>
-        <input type="text" value={location} onChange={e => setLocation(e.target.value)} />
+        <input type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} />
         <button className="btn btn-lg btn-primary m-2" type="submit">
           Get Your Weather Dashboard
         </button>

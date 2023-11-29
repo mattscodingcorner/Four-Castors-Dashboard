@@ -2,8 +2,12 @@ import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 
 
+
 import WeatherComponent from '../components/Weather/index.';
 import { QUERY_PROFILES } from '../utils/queries';
+// import ScrollableDropdown from '../components/Drop down menu';
+
+import MapComponent from '../components/Map/MapComponent';
 
 // const fetchWeatherData = async (location) => {
 //   try {
@@ -27,27 +31,23 @@ import { QUERY_PROFILES } from '../utils/queries';
 
 //   const { name, weather, main } = weatherData || {};
 
-//   const convertToCelsius = (temp) => {
-//     return Math.round(temp - 273.15);
-//   };
+  const convertToFahrenheit = (temp) => {
+    return Math.round((temp * 9) / 5 + 32);
+  };
 
-//   const convertToFahrenheit = (temp) => {
-//     return Math.round((temp * 9) / 5 + 32);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={promptForLocation}>Get Weather</button>
-//       {weatherData && (
-//         <div>
-//           <h2>{name}</h2>
-//           <h3>{weather?.[0]?.description}</h3>
-//           <h3>{convertToFahrenheit(main.temp)} °F</h3>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
+  return (
+    <div className="weatherComponent" >
+      <button className="btn btn-lg btn-primary m-2" onClick={promptForLocation}>Get Your Weather Dashboard</button>
+      {weatherData && (
+        <div>
+          <h2>{name}</h2>
+          <h3>{weather?.[0]?.description}</h3>
+          <h3>{convertToFahrenheit(main.temp)}°F</h3>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
@@ -61,9 +61,10 @@ const Home = () => {
             <div>The sun is warming up...</div>
           ) : (
             <>
-              <WeatherComponent />
+              <WeatherComponent 
               {/* <WeatherForecast /> */}
               {/* <ProfileList profiles={profiles} /> */}
+              <MapComponent /> 
             </>
           )}
         </div>

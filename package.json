@@ -17,5 +17,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@maptiler/sdk": "^1.2.0",
+    "@maptiler/weather": "^1.1.2"
   }
 }

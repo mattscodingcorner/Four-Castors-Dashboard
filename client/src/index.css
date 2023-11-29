@@ -356,7 +356,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   font-size: 16px;
@@ -369,7 +369,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Poppins', monospace;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
@@ -920,11 +920,11 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: #0d60b8 !important;
 }
 
 .bg-info {
-  background-image: radial-gradient(rgb(43, 214, 248), rgb(0, 149, 255), rgb(0, 79, 128))  !important;
+  background-image: radial-gradient(rgba(232, 106, 175, 0.822), rgb(216, 144, 209), rgb(231, 132, 176))  !important;
 }
 
 .bg-danger {
@@ -1012,12 +1012,12 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: #a63764;
   color: #d9e9e8;
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #ce3572;
 }
 
 .btn.btn-danger {
@@ -1030,21 +1030,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
+  background-color: #d5447e;
   color: #ffffff;
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #a63764;
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: #a63764;
+  color: #fffefe;
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #ce3572;
 }
 
 .btn.btn-dark {
@@ -1329,6 +1329,12 @@ label form [type='radio'] {
 .col-12 {
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+/* custom made classes */
+.weatherComponent{
+  display: flex;
+  justify-content: center;
 }
 
 /* col-sm */
@@ -1705,4 +1711,9 @@ label form [type='radio'] {
   .align-content-center-xl {
     align-content: center;
   }
+}
+body {
+  background-image: url("./assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -1056,12 +1056,12 @@ a:hover {
 }
 
 .btn.btn-dark {
-  background-color: #1a1a1a;
+  background-color: #a63764;
   color: #d9e9e8;
 }
 
 .btn.btn-dark:hover {
-  background-color: #5f5f5f;
+  background-color: #ce3572;
 }
 
 .btn.btn-white {
@@ -1724,4 +1724,7 @@ body {
   background-image: url("./assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.text-spacing {
+  letter-spacing: 0.2em;
 }

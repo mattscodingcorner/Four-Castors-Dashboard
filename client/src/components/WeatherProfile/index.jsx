@@ -86,7 +86,7 @@ const WeatherComponent = ({ location, setSelectedLocation }) => {
       )}
       {dailyForecast.map((forecast, index) => (
         <div key={index}>
-          <h4>{new Date(forecast.dt_txt).toLocaleDateString()}</h4>
+        <h4>{new Date(forecast.dt_txt).toLocaleDateString(undefined, { day: 'numeric', month: 'long' })}</h4>
           <img src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`} alt={forecast.weather[0].description} />
           <p>Temperature: {convertToFahrenheit(forecast.main.temp)}°F</p>
           <p>Weather: {forecast.weather[0].description}</p>

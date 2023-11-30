@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import WeatherComponent from '../WeatherProfile' 
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import WeatherComponent from "../WeatherProfile";
 
-import { REMOVE_LOCATION } from '../../utils/mutations';
-import { QUERY_ME } from '../../utils/queries';
+import { REMOVE_LOCATION } from "../../utils/mutations";
+import { QUERY_ME } from "../../utils/queries";
 
 const LocationsList = ({ locations, isLoggedInUser = false }) => {
   const [removeLocation, { error }] = useMutation(REMOVE_LOCATION, {
-    refetchQueries: [QUERY_ME, 'me'],
+    refetchQueries: [QUERY_ME, "me"],
   });
 
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -37,12 +37,18 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
           locations.map((location) => (
             <div key={location} className="col-12 col-xl-6">
               <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
-                  <span onClick={() => handleLocationClick(location)}>{location}</span>
+                <h4
+                  className=" locationSpans card-header p-2 m-0 display-flex align-center"
+                  onClick={() => handleLocationClick(location)}
+                >
+                  <span>{location}</span>
                   {isLoggedInUser && (
                     <button
                       className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveLocation(location)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleRemoveLocation(location);
+                      }}
                     >
                       X
                     </button>
@@ -52,10 +58,15 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
             </div>
           ))}
       </div>
-      {error && <div className="my-3 p-3 bg-danger text-white">{error.message}</div>}
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+      )}
       {selectedLocation && (
         <div className="m-auto text-justify py-5 pl-3 pr-3 text-spacing">
-          <WeatherComponent location={selectedLocation} setSelectedLocation={setSelectedLocation} />
+          <WeatherComponent
+            location={selectedLocation}
+            setSelectedLocation={setSelectedLocation}
+          />
         </div>
       )}
     </div>
@@ -65,3 +76,5 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
 export default LocationsList;
 
 // the spans that contain the location names are clickable links that will take the user to the /weather/:location route, where :location is the name of the location. This route will display the weather data for the location.
+
+// bg-dark text-light

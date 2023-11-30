@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import WeatherComponent from '../WeatherProfile' // Import your WeatherComponent
+import WeatherComponent from '../WeatherProfile' 
 
 import { REMOVE_LOCATION } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
@@ -53,7 +53,11 @@ const LocationsList = ({ locations, isLoggedInUser = false }) => {
           ))}
       </div>
       {error && <div className="my-3 p-3 bg-danger text-white">{error.message}</div>}
-      {selectedLocation && <WeatherComponent location={selectedLocation} setSelectedLocation={setSelectedLocation} />}
+      {selectedLocation && (
+        <div className="m-auto text-justify py-5 pl-3 pr-3 text-spacing">
+          <WeatherComponent location={selectedLocation} setSelectedLocation={setSelectedLocation} />
+        </div>
+      )}
     </div>
   );
 };

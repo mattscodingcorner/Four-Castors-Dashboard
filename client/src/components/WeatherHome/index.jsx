@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import ReactGoogleAutocomplete from 'react-google-autocomplete';
+import.meta.env.VITE_APP_API_KEY
 
 const fetchWeatherData = async (location) => {
   try {
@@ -71,7 +73,13 @@ const handleSearch = async (event) => {
   return (
     <div className="weatherComponent">
       <form onSubmit={handleSearch}>
-        <input type="text" value={location} onChange={e => setLocation(e.target.value)} />
+        <ReactGoogleAutocomplete
+              placeholder="search for a location..."
+              value={location}
+              className="form-input w-100"
+              onChange={(event) => setLocation(event.target.value)}
+              apiKey={import.meta.env.VITE_APP_API_KEY}
+            />
         <button className="btn btn-lg btn-primary m-2" type="submit">
           Get Your Weather Dashboard
         </button>

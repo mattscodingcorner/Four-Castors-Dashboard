@@ -28,7 +28,7 @@ const fetchWeatherForecast = async (location) => {
   }
 };
 
-const WeatherComponent = ({ location, setSelectedLocation }) => {
+const WeatherComponentProfile = ({ location, setSelectedLocation }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [weatherForecast, setWeatherForecast] = useState(null);
   const [error, setError] = useState(null);
@@ -100,4 +100,4 @@ const WeatherComponent = ({ location, setSelectedLocation }) => {
   );
 };
 
-export default WeatherComponent;
+export default WeatherComponentProfile;

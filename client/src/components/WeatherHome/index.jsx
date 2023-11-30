@@ -69,13 +69,15 @@ const handleSearch = async (event) => {
   const dailyForecast = weatherForecast ? weatherForecast.list.filter(forecast => new Date(forecast.dt_txt).getHours() === 12) : [];
 
   return (
-    <div className="weatherComponent">
+    <div className="weatherComponentHome">
+      <div className="weatherHomeForm">
       <form onSubmit={handleSearch}>
         <input type="text" value={location} onChange={e => setLocation(e.target.value)} />
         <button className="btn btn-lg btn-primary m-2" type="submit">
           Get Your Weather Dashboard
         </button>
       </form>
+      </div>
       {error && <p>{error}</p>}
       {weatherData && (
         <div>

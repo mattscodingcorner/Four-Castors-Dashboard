@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import * as maptilersdk from '@maptiler/sdk';
+import * as maptilerweather from '@maptiler/weather';
 
 const MapComponent = () => {
   useEffect(() => {
@@ -9,6 +10,14 @@ const MapComponent = () => {
       style: maptilersdk.MapStyle.BACKDROP,
       zoom: 13,
     });
+
+    const weatherLayer = new maptilerweather.WindLayer(); // Create a new weather layer
+
+    map.on('load', function () {
+      map.setPaintProperty("Water", 'fill-color', "rgba(0, 0, 0, 0.4)");
+      map.addLayer(weatherLayer, 'Water'); // Add the weather layer to the map
+    });
+
 
     // Prompt user for location
     if (navigator.geolocation) {

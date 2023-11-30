@@ -68,16 +68,19 @@ const WeatherComponent = ({ location, setSelectedLocation }) => {
   const dailyForecast = weatherForecast ? weatherForecast.list.filter(forecast => new Date(forecast.dt_txt).getHours() === 12) : [];
 
   return (
-    <div className="weatherComponent">
+    <div className="weatherComponent d-flex flex-column align-items-center">
+    <div className='weatherFormProfile'>
       <form onSubmit={handleSearch}>
         <input type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} />
         <button className="btn btn-lg btn-primary m-2" type="submit">
           Get Your Weather Dashboard
         </button>
       </form>
-      {error && <p>{error}</p>}
+    </div>
+    {error && <p>{error}</p>}
+    <div className="weatherData d-flex flex-row justify-content-around w-100">
       {weatherData && (
-        <div>
+        <div className='currentWeatherSingular'>
           <h2>{name}</h2>
           <img src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} alt={weather[0].description} />
           <h3>{weather[0].description}</h3>
@@ -85,14 +88,15 @@ const WeatherComponent = ({ location, setSelectedLocation }) => {
         </div>
       )}
       {dailyForecast.map((forecast, index) => (
-        <div key={index}>
-        <h4>{new Date(forecast.dt_txt).toLocaleDateString(undefined, { day: 'numeric', month: 'long' })}</h4>
+        <div className='currentForecastSingular' key={index}>
+          <h4>{new Date(forecast.dt_txt).toLocaleDateString(undefined, { day: 'numeric', month: 'long' })}</h4>
           <img src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`} alt={forecast.weather[0].description} />
           <p>Temperature: {convertToFahrenheit(forecast.main.temp)}°F</p>
           <p>Weather: {forecast.weather[0].description}</p>
         </div>
       ))}
     </div>
+  </div>
   );
 };
 

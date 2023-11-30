@@ -1770,6 +1770,18 @@ body {
   border-color: rgb(78, 24, 165);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .weatherComponentHome {
   display: flex;
   flex-direction: column;
@@ -1782,4 +1794,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.currentWeatherSingularHome {
+  border: 3px solid black;
+  padding: 10px;
+  margin: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.currentForecastSingularHome {
+  border: 3px solid black;
+  padding: 10px;
+  margin: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.currentWeatherSingularHome:hover, .currentForecastSingularHome:hover {
+  border-color: rgb(78, 24, 165);
 }

@@ -1740,7 +1740,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 75vh; /* or any other value that suits your needs */
+  height: 80vh; /* or any other value that suits your needs */
   overflow: auto;
 }
 

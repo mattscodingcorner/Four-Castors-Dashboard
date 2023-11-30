@@ -28,7 +28,7 @@ const fetchWeatherForecast = async (location) => {
   }
 };
 
-const WeatherComponent = () => {
+const WeatherComponentHome = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [weatherForecast, setWeatherForecast] = useState(null);
   const [error, setError] = useState(null);
@@ -69,7 +69,7 @@ const handleSearch = async (event) => {
   const dailyForecast = weatherForecast ? weatherForecast.list.filter(forecast => new Date(forecast.dt_txt).getHours() === 12) : [];
 
   return (
-    <div className="weatherComponentHome">
+    <div className="weatherComponentHome d-flex flex-column align-items-center">
       <div className="weatherHomeForm">
       <form onSubmit={handleSearch}>
         <input type="text" value={location} onChange={e => setLocation(e.target.value)} />
@@ -79,8 +79,9 @@ const handleSearch = async (event) => {
       </form>
       </div>
       {error && <p>{error}</p>}
+      <div className="weatherDataHome d-flex flex-row justify-content-around w-100">
       {weatherData && (
-        <div>
+        <div className='currentWeatherSingularHome'>
           <h2>{name}</h2>
           <img src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} alt={weather[0].description} />
           <h3>{weather[0].description}</h3>
@@ -88,7 +89,7 @@ const handleSearch = async (event) => {
         </div>
       )}
       {dailyForecast.map((forecast, index) => (
-        <div key={index}>
+        <div className='currentForecastSingularHome' key={index}>
           <h6>{new Date(forecast.dt_txt).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}</h6>
           <img src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`} alt={forecast.weather[0].description} />
           <p>Temperature: {convertToFahrenheit(forecast.main.temp)}°F</p>
@@ -96,7 +97,8 @@ const handleSearch = async (event) => {
         </div>
       ))}
     </div>
+    </div>
   );
 };
 
-export default WeatherComponent;
+export default WeatherComponentHome;

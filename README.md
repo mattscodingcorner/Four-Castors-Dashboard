@@ -11,7 +11,21 @@ Like to just be in the know?
 Well, we are just like you, which is why we created the Four-Castors Dashboard
 
 
-## Application Requirements
+## Instructions
+
+1. Clone the repo
+
+2. Install dependencies via `npm i`
+
+3. Create a .env file within the client root folder
+
+4. Add this line: `VITE_APP_API_KEY='<replace-with-own-api-key>'`
+
+5. To have a functional autocomplete feature, the Google autocomplete API key is required
+
+6. Run `npm run` develop in terminal to host the site in the browser
+
+## Deployed Link
 ** - Site runs perfectly fine on local host. Heroku has issues reading the API's both google autocomplete and the openweathermap components. API keys are broken within Heroku, to see full functionality run on local host. 
 
 -run npm i within the server folder to be able to run locally. 

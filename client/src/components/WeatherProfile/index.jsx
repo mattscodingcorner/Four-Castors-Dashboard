@@ -18,7 +18,7 @@ const fetchWeatherData = async (location) => {
 
 const fetchWeatherForecast = async (location) => {
   try {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=51f615dbed5fbc27f3137d2ba941cf4a`);
+    const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${process.env.OPENWEATHER_API_KEY}`);
     const data = await response.json();
     if (data.cod === '404') {
       return null;

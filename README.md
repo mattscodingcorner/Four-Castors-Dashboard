@@ -22,7 +22,7 @@ Well, we are just like you, which is why we created the Four-Castors Dashboard
 
 5. To have a functional autocomplete feature, the Google autocomplete API key is required
 
-6. Run `npm run` develop in terminal to host the site in the browser
+6. Run `npm run develop` in terminal to host the site in the browser
 
 ## Deployed Link
 

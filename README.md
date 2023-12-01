@@ -33,13 +33,13 @@ We wanted to make an easy to use app that allows you to save locations to get cu
 
 ## The Team "The Git Pull Gals"
 
-Jose Guillen -
+Jose Guillen -https://github.com/Exo-MDR-CD2000
 
-Carlos Ogle -
+Carlos Ogle -https://github.com/QotsaOmega266
 
-Matt Velazquez -
+Matt Velazquez -https://github.com/mattscodingcorner
 
-Ranee Bracker -
+Ranee Bracker -https://github.com/rbracker
 
 ## Challenges we Faced, but Overcame
 Scheduling conflicts

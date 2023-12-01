@@ -4,7 +4,7 @@ import.meta.env.VITE_APP_API_KEY
 
 const fetchWeatherData = async (location) => {
   try {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=51f615dbed5fbc27f3137d2ba941cf4a`);
+    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.OPENWEATHER_API_KEY}`);
     const data = await response.json();
     if (data.cod === '404') {
       return null;

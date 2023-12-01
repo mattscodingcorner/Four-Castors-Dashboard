@@ -25,9 +25,13 @@ Well, we are just like you, which is why we created the Four-Castors Dashboard
 6. Run `npm run` develop in terminal to host the site in the browser
 
 ## Deployed Link
-** - Heroku has issues reading openweatherapi and does not call it successfully. Local install is advised. 
 
--- https://intense-earth-62724-27c2d34e22f0.herokuapp.com/
+- Heroku has issues reading the API's both google autocomplete and the openweathermap components. API keys are broken within Heroku, to see full functionality run on local host. Localhost install is advised.
+
+
+- [Deployed Link](https://intense-earth-62724-27c2d34e22f0.herokuapp.com/)
+
+
 
 ## The Team "The Git Pull Gals"
 

@@ -2,10 +2,19 @@
 The Four-Castors-Dashboard is an app that allows you to see what the current and expected weather is going to be in your location and many other locations you are interested in seeing. It also allows you to save locations to allow easy access to your most frequented places you either visit, live or vacation to.
 
 ## Our Mission
-We wanted to make an easy to use app that allows you to save locations to get current and expected weathering reports.
+Have you ever
+Needed to know what the weather is going to be like for the day or week?
+Needed to plan out your outfit according to the weather?
+Needed to plan outdoor activities?
+Needed to know what the weather is going to be like?
+Like to just be in the know?
+Well, we are just like you, which is why we created the Four-Castors Dashboard
+
 
 ## Application Requirements
 ** - Site runs perfectly fine on local host. Heroku has issues reading the API's both google autocomplete and the openweathermap components. API keys are broken within Heroku, to see full functionality run on local host. 
+
+-run npm i within the server folder to be able to run locally. 
 
 -- https://intense-earth-62724-27c2d34e22f0.herokuapp.com/
 

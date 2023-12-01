@@ -5,6 +5,8 @@ The Four-Castors-Dashboard is an app that allows you to see what the current and
 We wanted to make an easy to use app that allows you to save locations to get current and expected weathering reports.
 
 ## Application Requirements
+** - Site runs perfectly fine on local host. Heroku has issues reading the API's both google autocomplete and the openweathermap components. API keys are broken within Heroku, to see full functionality run on local host. 
+
 **Use React for the front end.
 
 **Use GraphQL with a Node.js and Express.js server.

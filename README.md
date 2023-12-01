@@ -9,30 +9,6 @@ We wanted to make an easy to use app that allows you to save locations to get cu
 
 -- https://intense-earth-62724-27c2d34e22f0.herokuapp.com/
 
-**Use React for the front end.
-
-**Use GraphQL with a Node.js and Express.js server.
-
-**Use MongoDB and the Mongoose ODM for the database.
-
-**Use queries and mutations for retrieving, adding, updating, and deleting data.
-
-**Be deployed using Heroku (with data).
-
-**Have a polished UI.
-
-**Be responsive.
-
-**Be interactive (i.e., accept and respond to user input).
-
-**Include authentication (JWT).
-
-**Protect sensitive API key information on the server.
-
-**Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, and so on).
-
-**Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
 ## The Team "The Git Pull Gals"
 
 Jose Guillen -https://github.com/Exo-MDR-CD2000
@@ -46,7 +22,16 @@ Ranee Bracker -https://github.com/rbracker
 ## Challenges we Faced, but Overcame
 Scheduling conflicts
 Holiday festivities 
+Initial challenges were saving locations and having them being saved to the client side
+Implementing  a weather map based off the users geolocation 
+Adding the Openweathermap forecast data to be rendered on profile and home page
+## Future Developments 
+Implement mobile view for weather dashboard
+Update the map to accept weather data 
+Scroll the map to any part of the world to receive that area’s weather data 
+Weather layer switcher (Temperature, Rain, Pressure, Radar)
+Pull weather data on where you stop on the map
+Refine styling / dark mode / UI switcher / Custom UI
 
-## Overall Thoughts
 
-## Links to The-Four-Castors-Dashboard
+
